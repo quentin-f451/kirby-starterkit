@@ -10,3 +10,4 @@ Icon
 !/site/sessions/index.html
 /site/config/.license
 /node_modules
+/assets
