@@ -1,13 +1,13 @@
 {
-  "name": "base-kirby3",
+  "name": "kirby-starterkit",
   "version": "1.0.0",
   "description": "Working base for Kirby 3 with Webpack",
   "author": "quentin-f451",
   "license": "MIT",
   "private": false,
-  "homepage": "https://github.com/quentin-f451/base-kirby3#readme",
+  "homepage": "https://github.com/quentin-f451/kirby-starterkit#readme",
   "bugs": {
-    "url": "https://github.com/quentin-f451/base-kirby3/issues"
+    "url": "https://github.com/quentin-f451/kirby-starterkit/issues"
   },
   "scripts": {
     "dev": "webpack --mode development",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quentin-f451/base-kirby3.git"
+    "url": "git+https://github.com/quentin-f451/kirby-starterkit.git"
   },
   "dependencies": {},
   "devDependencies": {
