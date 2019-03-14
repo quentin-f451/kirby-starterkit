@@ -6,6 +6,7 @@ This repo is my own starterkit for Kirby 3 projects. It works with Webpack and B
 ## Requirements
 
 + [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/).
++ [Composer](https://getcomposer.org/doc/00-intro.md)
 + A production server with >=PHP7.1. I personally use [MAMP Pro](https://www.mamp.info/en/mamp-pro/).
 
 ## Installation
