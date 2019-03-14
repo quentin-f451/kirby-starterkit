@@ -55,8 +55,7 @@ Fallbacks examples
 
 $number-of-columns:                         12;       // Number of columns
 
-// Base margin, padding and absolute positioning size
-$is-global-viewport-sizes:                  false;    // true for sizes globally defined relatively to default line-height, false for sizes globally defined in px
+// Base space
 $base-space:                                10px;     // Initial space in px or relative to default line-height (default: 10px)
 
 // __________________________________________________________ //
