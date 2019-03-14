@@ -1,0 +1,18 @@
+{
+  "name": "base-kirby3",
+  "version": "0.0.1",
+  "description": "Working base for Kirby 3 with Webpack",
+  "author": "quentin-f451",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://github.com/quentin-f451/base-kirby3#readme",
+  "bugs": {
+    "url": "https://github.com/quentin-f451/base-kirby3/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quentin-f451/base-kirby3.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
