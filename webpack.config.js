@@ -6,6 +6,12 @@ const OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+/////////////////////////////////////////////////////////////////////////
+
+const localhost = 'http://test:8888'; // Server address as setup in MAMP
+
+/////////////////////////////////////////////////////////////////////////
+
 let config = {
   entry: ['./src/js/index.js', './src/scss/application.scss'],
   output: {
@@ -74,7 +80,7 @@ let config = {
 		new BrowserSyncPlugin({
       host: 'localhost',
       port: '3000',
-      proxy: 'http://test:8888',
+      proxy: localhost,
       files: [{
         match: ['**/*.php'],
         fn: function(event, file) {
