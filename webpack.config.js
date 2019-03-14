@@ -3,6 +3,8 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let config = {
   entry: ['./src/js/index.js', './src/scss/application.scss'],
@@ -68,7 +70,23 @@ let config = {
       filename: "./css/bundle.css",
 		}),
 		new MinifyPlugin(),
-		new OptimizeCSSAssets()
+		new OptimizeCSSAssets(),
+		new BrowserSyncPlugin({
+      host: 'localhost',
+      port: '3000',
+      proxy: 'http://test:8888',
+      files: [{
+        match: ['**/*.php'],
+        fn: function(event, file) {
+          if (event === "change") {
+            const bs = require('browser-sync').get('bs-webpack-plugin');
+            bs.reload();
+          }
+        }
+      }],
+      injectChanges: true,
+      notify: true
+    })
   ]
 }
 module.exports = config;

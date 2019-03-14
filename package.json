@@ -11,6 +11,7 @@
   },
   "scripts": {
     "dev": "webpack --mode development",
+    "start": "npm run dev && webpack --watch",
     "build": "webpack --mode production",
     "watch": "webpack --watch"
   },
@@ -27,6 +28,7 @@
     "babel-minify-webpack-plugin": "^0.3.1",
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^2.0.0",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.5.0",
