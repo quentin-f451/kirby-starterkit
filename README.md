@@ -20,6 +20,7 @@ cd path/to/my/folder
 ```
 git clone --recurse-submodules https://github.com/quentin-f451/kirby-starterkit
 cd kirby-starterkit
+git submodule add https://github.com/getkirby/kirby.git kirby
 git submodule update
 ```
 
