@@ -56,7 +56,7 @@ let config = {
         use: {
           loader: "file-loader",
           options: {
-            name: "./fonts/[name].[ext]"
+            name: "../fonts/[name].[ext]"
           },
         },
       },
@@ -65,7 +65,7 @@ let config = {
         use: [{
           loader: "file-loader",
           options: {
-            name: "./images/[name].[ext]"
+            name: "../images/[name].[ext]"
           }
         }]
       }
