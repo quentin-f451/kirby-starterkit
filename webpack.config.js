@@ -15,8 +15,8 @@ const localhost = 'http://test:8888'; // Server address as setup in MAMP
 let config = {
   entry: ['./src/js/index.js', './src/scss/application.scss'],
   output: {
-    path: path.resolve(__dirname, "./assets"),
-    filename: "./js/bundle.js"
+    path: path.resolve(__dirname, "./assets/js"),
+    filename: "./bundle.js"
   },
   module: {
     rules: [{
@@ -73,7 +73,7 @@ let config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./css/bundle.css",
+      filename: "../css/bundle.css",
 		}),
 		new MinifyPlugin(),
 		new OptimizeCSSAssets(),
