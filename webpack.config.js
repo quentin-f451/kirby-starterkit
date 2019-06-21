@@ -11,7 +11,7 @@ const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
 /////////////////////////////////////////////////////////////////////////
 
-const localhost = 'http://test.test'; // Server address as setup in Laravel
+const localhost = 'http://NAME-OF-MY-APP.test'; // Server address as setup in Laravel
 
 /////////////////////////////////////////////////////////////////////////
 
