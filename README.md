@@ -33,7 +33,7 @@ composer install
 npm install
 ```
 
-5. Launch your production server (for example with Laravel Valet) and link it to your folder. For example, I create the production server `http://test.test` linked to the `NAME-OF-MY-FOLDER/www` folder.
+5. Launch your production server (for example with Laravel Valet) and link it to your folder. For example, I create the production server `http://NAME-OF-MY-FOLDER.test` linked to the `NAME-OF-MY-FOLDER/www` folder.
 ```
 cd www
 valet link NAME-OF-MY-APP
