@@ -1,0 +1,27 @@
+{
+    "name": "bnomei/kirby3-robots-txt",
+    "type": "kirby-plugin",
+    "description": "Manage the robots.txt from the Kirby config file",
+    "version": "1.2.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Meilick",
+            "email": "b@bnomei.com"
+        }
+    ],
+    "keywords": [
+        "kirby3",
+        "kirby3-cms",
+        "kirby3-plugin",
+        "robots-txt",
+        "robots-exclusion-protocol"
+    ],
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "getkirby/composer-installer": "^1.1"
+    }
+}
