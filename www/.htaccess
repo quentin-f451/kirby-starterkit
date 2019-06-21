@@ -7,6 +7,12 @@
 # http://yourdomain.com/about-us/team
 RewriteEngine on
 
+RewriteCond %{HTTP_HOST} !=localhost
+RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
 # make sure to set the RewriteBase correctly
 # if you are running the site in a subfolder.
 # Otherwise links or the entire site will break.
@@ -18,8 +24,8 @@ RewriteEngine on
 
 # In some enviroments it's necessary to
 # set the RewriteBase to:
-#
-# RewriteBase /
+
+RewriteBase /
 
 # block files and folders beginning with a dot, such as .git
 # except for the .well-known folder, which is used for Let's Encrypt and security.txt

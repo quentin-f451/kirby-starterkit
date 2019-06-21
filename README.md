@@ -7,7 +7,7 @@ This repo is my own starterkit for Kirby 3 projects. It works with Webpack and B
 
 + [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/).
 + [Composer](https://getcomposer.org/doc/00-intro.md)
-+ A production server with >=PHP7.1. I personally use [MAMP Pro](https://www.mamp.info/en/mamp-pro/).
++ A production server with >=PHP7.1. I personally use [Laravel Valet](https://getkirby.com/docs/cookbook/setup/development-environment#laravel-valet).
 
 ## Installation
 
@@ -18,17 +18,14 @@ cd path/to/my/folder
 
 2. Clone this repository with the submodules
 ```
-git clone --recurse-submodules https://github.com/quentin-f451/kirby-starterkit
+git clone https://github.com/quentin-f451/kirby-starterkit
 cd kirby-starterkit
-git submodule add https://github.com/getkirby/kirby.git kirby
-git submodule update
+git clone https://github.com/quentin-f451/scss-starterkit.git src/scss/_base
 ```
 
 3. Install and update Kirby
 ```
-cd kirby
-composer update
-cd ..
+composer install
 ```
 
 4. Install dependencies with npm
@@ -36,11 +33,11 @@ cd ..
 npm install
 ```
 
-5. Launch your production server (for example in MAMP) and link it to your folder. For example, I create the production server `http://test:8888` linked to the `kirby-starterkit` folder.
+5. Launch your production server (for example with Laravel Valet) and link it to your folder. For example, I create the production server `http://test.test` linked to the `kirby-starterkit/www` folder.
 
 6. Update `webpack.config.js` file with the address of your production server
 ```js
-const localhost = 'http://test:8888';
+const localhost = 'http://test.test';
 ```
 
 7. You just have to type `npm run start` now and to start coding. The browser will reload at every saved change!
@@ -52,28 +49,26 @@ const localhost = 'http://test:8888';
 After the installation, your folder will more or less look like that:
 
 ```
-assets/
-content/
-kirby/
-media/
 node_modules/
-site/
 src/
-.htaccess
+vendor/
+www/
+.babelrc
+.browserslistrc
 CHANGELOG.md
 composer.json
-index.php
+composer.lock
 LICENCE
-package.json
 package-lock.json
+package.json
 postcss.config.js
 README.md
 webpack.config.js
 ```
 
 You will apply the changes to the following files/folders:
-+ `site` folder and its subfolders: the main folder for Kirby coding. [Kirby documentation](https://getkirby.com/docs/reference) will be really useful to help you here.
-+ `src` folder and its subfolders: every file that is here will be compile to the `assets` folder. You will already find `scss` and `js` folders where you can code your stylesheets (with SCSS/CSS) and your scripts (with JS). You might have to add `fonts` and `images` folders for font and image files that are linked to your CSS files. In `scss` folder, you will already find my [SCSS Starterkit](https://github.com/quentin-f451/scss-starterkit), very useful if you want to configure you website really easily. 
++ `www` folder and its subfolders: the main folder for Kirby coding. [Kirby documentation](https://getkirby.com/docs/reference) will be really useful to help you here.
++ `src` folder and its subfolders: every file that is here will be compile to the `www/assets` folder. You will already find `scss` and `js` folders where you can code your stylesheets (with SCSS/CSS) and your scripts (with JS). You might have to add `fonts` and `images` folders for font and image files that are linked to your CSS files. In `scss` folder, you will already find my [SCSS Starterkit](https://github.com/quentin-f451/scss-starterkit), very useful if you want to configure you website really easily. 
 
 All other files can obviously be modified, **if you know what you are doing!!!**
 
