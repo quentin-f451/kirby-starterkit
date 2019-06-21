@@ -18,8 +18,8 @@ cd path/to/my/folder
 
 2. Clone this repository with the submodules
 ```
-git clone https://github.com/quentin-f451/kirby-starterkit
-cd kirby-starterkit
+git clone https://github.com/quentin-f451/kirby-starterkit NAME-OF-MY-FOLDER
+cd NAME-OF-MY-FOLDER
 git clone https://github.com/quentin-f451/scss-starterkit.git src/scss/_base
 ```
 
@@ -33,11 +33,16 @@ composer install
 npm install
 ```
 
-5. Launch your production server (for example with Laravel Valet) and link it to your folder. For example, I create the production server `http://test.test` linked to the `kirby-starterkit/www` folder.
+5. Launch your production server (for example with Laravel Valet) and link it to your folder. For example, I create the production server `http://test.test` linked to the `NAME-OF-MY-FOLDER/www` folder.
+```
+cd www
+valet link NAME-OF-MY-APP
+cd ..
+```
 
 6. Update `webpack.config.js` file with the address of your production server
 ```js
-const localhost = 'http://test.test';
+const localhost = 'http://NAME-OF-MY-APP.test';
 ```
 
 7. You just have to type `npm run start` now and to start coding. The browser will reload at every saved change!
