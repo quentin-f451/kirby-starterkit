@@ -1,7 +1,9 @@
-Icon
-.DS_Store
-.editorconfig
-CHANGELOG.md
+/Icon
+/.DS_Store
+/.editorconfig
+/CHANGELOG.md
+/package-lock.json
+/composer.lock
 /node_modules
 /vendor
 /www/assets

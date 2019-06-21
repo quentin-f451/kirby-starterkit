@@ -1,6 +1,19 @@
 {
+  "name": "kirby-starterkit",
+  "description": "Starterkit for Kirby 3",
+  "type": "project",
+  "keywords": ["kirby", "cms", "starterkit"],
+  "homepage": "https://github.com/quentin-f451/kirby-starterkit#readme",
+  "authors": [
+      {
+          "name": "Quentin Creuzet",
+          "email": "quentin@f451.faith",
+          "homepage": "https://quentincreuzet.fr"
+      }
+  ],
   "require": {
-    "getkirby/cms": "^3.0"
+      "php": ">=7.1.0",
+      "getkirby/cms": "^3.0"
   },
   "config": {
     "optimize-autoloader": true
