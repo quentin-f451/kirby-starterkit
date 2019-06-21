@@ -26,6 +26,9 @@ git clone https://github.com/quentin-f451/scss-starterkit.git src/scss/_base
 3. Install and update Kirby
 ```
 composer install
+cd www/kirby
+composer update
+cd ..
 ```
 
 4. Install dependencies with npm
