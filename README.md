@@ -1,5 +1,5 @@
 # Kirby Starterkit
-[![Release](https://img.shields.io/github/release-pre/quentin-f451/kirby-starterkit.svg)](https://github.com/quentin-f451/kirby-starterkit/releases)
+[![Release](https://img.shields.io/github/release/quentin-f451/kirby-starterkit.svg)](https://github.com/quentin-f451/kirby-starterkit/releases)
 
 This repo is my own starterkit for Kirby 3 projects. It works with Webpack and BrowserSync and allows to work with SCSS and ES6. Featuring [Kirby CMS](https://getkirby.com/) and [SCSS Starterkit](https://github.com/quentin-f451/scss-starterkit).
 
