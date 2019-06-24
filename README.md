@@ -20,7 +20,7 @@ cd path/to/my/folder
 ```
 git clone https://github.com/quentin-f451/kirby-starterkit NAME-OF-MY-FOLDER
 cd NAME-OF-MY-FOLDER
-git clone https://github.com/quentin-f451/scss-starterkit.git src/scss/_base
+git clone https://github.com/quentin-f451/scss-starterkit.git src/scss
 ```
 
 3. Install and update Kirby

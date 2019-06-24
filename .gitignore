@@ -6,7 +6,7 @@ Icon
 /composer.lock
 /node_modules
 /vendor
-/src/scss/_base
+/src/scss
 /www/assets
 /www/kirby
 /www/media
