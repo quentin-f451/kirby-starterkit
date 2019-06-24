@@ -8,6 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -124,6 +125,7 @@ let config = {
     new MiniCssExtractPlugin({
       filename: '../css/bundle.css',
     }),
+    new LodashModuleReplacementPlugin,
     new HardSourceWebpackPlugin(),
     new MinifyPlugin({}, { comments: false }),
     new OptimizeCSSAssets(),
