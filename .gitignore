@@ -6,7 +6,12 @@ Icon
 /composer.lock
 /node_modules
 /vendor
-/src/scss
+/src/scss/_lib/_normalize.scss
+/src/scss/_partials
+/src/scss/application.scss
+/src/scss/config.scss
+/src/scss/.gitignore
+/src/scss/README.md
 /www/assets
 /www/kirby
 /www/media
