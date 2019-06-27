@@ -31,7 +31,6 @@
     "leaflet": "^1.5.1",
     "mdn-polyfills": "^5.17.0",
     "nodelist-foreach-polyfill": "^1.2.0",
-    "npm-check-updates": "^3.1.11",
     "plyr": "^3.5.6",
     "smooth-scroll": "^16.1.0"
   },
