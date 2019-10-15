@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'community.markdown-field.buttons' => ['bold', 'italic', 'blockquote', 'ul', 'pagelink', 'image', 'link', 'email', 'horizontal-rule'],
+    'community.markdown-field.buttons' => ['bold', 'italic', 'pagelink', 'image', 'link', 'email'],
     'community.markdown-field.font' => [
         'family' => 'sans-serif',
         'scaling' => false,
@@ -11,6 +11,7 @@ return [
     'thumbs' => [
         'srcsets' => [
             // For mobile (420px), 1280px, 1800px, 2560px
+            'slideshow' => [420, 640, 900, 1280]
         ],
         'presets' => [
             'blur' => ['width' => 150, 'height' => 150, 'quality' => 30]
@@ -28,4 +29,10 @@ return [
     ],
 
     'smartypants' => true,
+
+    'medienbaecker.autoresize.maxWidth' => 2560,
+
+    'sylvainjule.matomo.url'        => 'http://matomo.quentincreuzet.fr/',
+    'sylvainjule.matomo.id'         => '',
+    'sylvainjule.matomo.token'      => 'c56530eed14b1d574a05017526de6cad',
 ];
