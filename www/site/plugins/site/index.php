@@ -5,6 +5,7 @@ require __DIR__ . '/helpers.php';
 Kirby::plugin('quentin-f451/site', [
     'fieldMethods' => include __DIR__ . '/fieldMethods.php',
     'fileMethods' => include __DIR__ . '/fileMethods.php',
+    'filesMethods' => include __DIR__ . '/filesMethods.php',
     'pageMethods' => include __DIR__ . '/pageMethods.php',
     'siteMethods' => include __DIR__ . '/siteMethods.php',
     'pagesMethods' => include __DIR__ . '/pagesMethods.php',
