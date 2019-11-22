@@ -13,6 +13,12 @@ const Website = {
 
     Website.resize();
     Website.blank();
+    
+    console.log(
+      'Website designed and coded by F451 (Domitille Debret and Quentin Creuzet)',
+    );
+    console.log('http://f451.faith');
+    console.log('hello@f451.faith');
   },
 
   blank: () => {
