@@ -13,3 +13,13 @@ function tagslug($text) {
 	}
 	return $text;
 };
+
+function toDigit($num, $digit) {
+  $i = 0;
+  while ($i < $digit):
+    $num = '0' . $num;
+    $i++;
+  endwhile;
+  $num = substr($num, -$digit);
+  return $num;
+}
