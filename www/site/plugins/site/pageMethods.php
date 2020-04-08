@@ -18,6 +18,6 @@ return [
   },
 
   'createImage' => function () {
-      return '';
+      // return $image->crop(1200, 630, 'center')->url();
   }
 ];
