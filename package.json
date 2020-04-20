@@ -23,7 +23,7 @@
     "jquery": "^3.4.1",
     "lazysizes": "^5.1.0",
     "mdn-polyfills": "^5.18.0",
-    "nodelist-foreach-polyfill": "^1.2.0",
+    "nodelist-foreach-polyfill": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
