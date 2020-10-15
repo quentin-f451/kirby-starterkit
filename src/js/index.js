@@ -11,7 +11,7 @@ window.$ = window.jQuery = jquery;
 import Website from './_modules/website';
 import Home from './_modules/home';
 
-$(document).ready(function() {
+$(function() {
   Website.init();
   Home.init();
 });
