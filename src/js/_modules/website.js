@@ -8,7 +8,7 @@ const Website = {
 
     var touch = isTouch ? "touch" : "no-touch";
     var os = isiOS ? "ios" : "no-ios";
-    $(html).addClass(touch).addClass(os);
+    $("html").addClass(touch).addClass(os);
 
     Website.resize();
     Website.blank();
