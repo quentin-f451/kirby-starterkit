@@ -1,8 +1,5 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
-const imageminMozjpeg = require("imagemin-mozjpeg");
-const WebpackNotifierPlugin = require("webpack-notifier");
 const merge = require("webpack-merge");
 const LiveReloadPlugin = require("webpack-livereload-plugin");
 
@@ -53,7 +50,6 @@ const commonConfig = {
           name: "[name].[hash].[ext]",
           outputPath: "/images/",
           publicPath: "../images/",
-          limit: 8192,
         },
       },
       {
@@ -72,11 +68,6 @@ const commonConfig = {
     new MiniCssExtractPlugin({
       filename: "./css/bundle.css",
     }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif)$/i,
-      plugins: [imageminMozjpeg({ quality: 100, progressive: true })],
-    }),
-    new WebpackNotifierPlugin({ title: "Webpack", alwaysNotify: true }),
   ],
 };
 

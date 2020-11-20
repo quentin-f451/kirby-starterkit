@@ -7,7 +7,6 @@ This repo is my own starterkit for Kirby 3 projects. It works with Webpack and B
 
 + [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/).
 + [Composer](https://getcomposer.org/doc/00-intro.md)
-+ A production server with >=PHP7.1. I personally use [Laravel Valet](https://getkirby.com/docs/cookbook/setup/development-environment#laravel-valet).
 
 ## Installation
 
@@ -37,21 +36,9 @@ cd ../..
 npm install
 ```
 
-5. Launch your production server (for example with Laravel Valet) and link it to your folder. For example, I create the production server `http://NAME-OF-MY-FOLDER.test` linked to the `NAME-OF-MY-FOLDER/www` folder.
-```
-cd www
-valet link NAME-OF-MY-APP
-cd ..
-```
+5. You just have to type `npm run start` now, open `http://localhost:8282` and to start coding. The browser will reload at every saved change!
 
-6. Update `webpack.config.js` file with the address of your production server
-```js
-const localhost = 'http://NAME-OF-MY-APP.test';
-```
-
-7. You just have to type `npm run start` now and to start coding. The browser will reload at every saved change!
-
-8. At the end of your coding process, you can run the `npm run build` command.
+6. At the end of your coding process, you can run the `npm run build` command.
 
 ## Folder structure
 
