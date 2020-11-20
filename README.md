@@ -40,6 +40,19 @@ npm install
 
 6. At the end of your coding process, you can run the `npm run build` command.
 
+7. Complete example: 
+```
+git clone https://github.com/quentin-f451/kirby-starterkit 10-KIRBY
+cd 10-KIRBY
+git clone --depth=1 https://github.com/quentin-f451/scss-starterkit.git src/scss
+rm -rf ./src/scss/.git
+composer install
+cd www/kirby
+composer update
+cd ../..
+npm install
+```
+
 ## Folder structure
 
 After the installation, your folder will more or less look like that:
