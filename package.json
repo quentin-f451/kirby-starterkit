@@ -10,7 +10,7 @@
     "url": "https://github.com/quentin-f451/kirby-starterkit/issues"
   },
   "scripts": {
-    "server": "APP_ENV=dev php -S localhost:8282 -t www www/kirby/router.php",
+    "server": "APP_ENV=dev php -S localhost:3000 -t www www/kirby/router.php",
     "dev": "webpack --mode=development --watch",
     "build": "rm -rf ./www/assets && webpack --mode=production",
     "start": "concurrently \"npm:dev\" \"npm:server\""
