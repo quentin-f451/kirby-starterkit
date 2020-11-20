@@ -1,3 +1,4 @@
+import "../scss/application.scss";
 import jquery from "jquery";
 
 window.$ = window.jQuery = jquery;
