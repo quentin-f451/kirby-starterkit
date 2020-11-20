@@ -1,35 +1,35 @@
-const webpack = require('webpack');
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
-const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
+const webpack = require("webpack");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+const OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
+const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
+const ModernizrWebpackPlugin = require("modernizr-webpack-plugin");
 
 /////////////////////////////////////////////////////////////////////////
 
-const localhost = 'http://NAME-OF-MY-APP.test'; // Server address as setup in Laravel
+const localhost = "http://NAME-OF-MY-APP.test"; // Server address as setup in Laravel
 
 /////////////////////////////////////////////////////////////////////////
 
 const modernizrConfig = {
-  filename: 'modernizr.js',
-  options: ['setClasses'],
-  'feature-detects': [
-    'history',
-    'cookies',
-    'touchevents',
-    'css/backdropfilter',
-    'css/customproperties',
-    'css/backgroundblendmode',
-    'css/cssgrid',
-    'css/filters',
-    'css/objectfit',
-    'css/positionsticky',
-    'img/srcset',
+  filename: "modernizr.js",
+  options: ["setClasses"],
+  "feature-detects": [
+    "history",
+    "cookies",
+    "touchevents",
+    "css/backdropfilter",
+    "css/customproperties",
+    "css/backgroundblendmode",
+    "css/cssgrid",
+    "css/filters",
+    "css/objectfit",
+    "css/positionsticky",
+    "img/srcset",
   ],
   minify: {
     output: {
@@ -40,10 +40,10 @@ const modernizrConfig = {
 };
 
 let config = {
-  entry: ['./src/js/index.js', './src/scss/application.scss'],
+  entry: ["./src/js/index.js", "./src/scss/application.scss"],
   output: {
-    path: path.resolve(__dirname, './www/assets/js'),
-    filename: './bundle.js',
+    path: path.resolve(__dirname, "./www/assets/js"),
+    filename: "./bundle.js",
   },
   module: {
     rules: [
@@ -51,7 +51,7 @@ let config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: { babelrc: true },
         },
       },
@@ -62,19 +62,19 @@ let config = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               importLoaders: 1,
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sourceMap: true,
             },
@@ -84,19 +84,19 @@ let config = {
       {
         test: /\.(ttf|eot|woff|woff2)$/,
         use: {
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            name: '../fonts/[name].[ext]',
+            name: "../fonts/[name].[ext]",
           },
         },
       },
       {
         test: /\.svg$/,
-        loader: 'svg-sprite-loader',
+        loader: "svg-sprite-loader",
         include: /icons/,
         options: {
           extract: true,
-          publicPath: '../svg/',
+          publicPath: "../svg/",
         },
       },
       {
@@ -104,9 +104,9 @@ let config = {
         exclude: /icons/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '../images/[name].[ext]',
+              name: "../images/[name].[ext]",
             },
           },
         ],
@@ -115,7 +115,7 @@ let config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '../css/bundle.css',
+      filename: "../css/bundle.css",
     }),
     new HardSourceWebpackPlugin(),
     new MinifyPlugin({}, { comments: false }),
@@ -123,15 +123,15 @@ let config = {
     new SpriteLoaderPlugin(),
     new ModernizrWebpackPlugin(modernizrConfig),
     new BrowserSyncPlugin({
-      host: 'localhost',
-      port: '3000',
+      host: "localhost",
+      port: "3000",
       proxy: localhost,
       files: [
         {
-          match: ['**/*.php'],
-          fn: function(event, file) {
-            if (event === 'change') {
-              const bs = require('browser-sync').get('bs-webpack-plugin');
+          match: ["**/*.php"],
+          fn: function (event, file) {
+            if (event === "change") {
+              const bs = require("browser-sync").get("bs-webpack-plugin");
               bs.reload();
             }
           },

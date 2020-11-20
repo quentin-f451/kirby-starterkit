@@ -46,14 +46,15 @@ export default {
             skipNextChangeEvent: false,
             currentDialog: null,
             currentTokenType: null,
-            id: '',
         }
     },
     props: {
+        id: Number,
         autofocus: Boolean,
         modals: Boolean,
         blank: Boolean,
         invisibles: Boolean,
+        direction: Boolean,
         buttons: [Boolean, Array],
         endpoints: Object,
         placeholder: String,
@@ -75,25 +76,36 @@ export default {
                     lineWrapping: true,
                     extraKeys: {
                         'Enter': 'newlineAndIndentContinueMarkdownList',
+                        'Shift-Tab': false,
                         'Tab': false, // Tab key will skip to next input on the page when setting it to false
                     },
                     font: this.font.family,
                     showInvisibles: false,
                     tabSize: 2,
-
                 };
             },
         },
     },
-    created() {
-        this.id = this._uid
+    computed: {
+        currentLanguage() {
+            return this.$store.state.languages.current
+        }
     },
     mounted() {
+        if(this.direction) {
+            this.options.direction = this.currentLanguage.direction;
+        }
+
         this.editor = CodeMirror.fromTextArea(this.$refs.input, this.options);
         this.editor.setValue(this.value || '');
 
         // force refresh after setValue, else some text might not be rendered before the editor is clicked
-        this.$nextTick(() => this.editor.refresh())
+        this.refresh()
+
+        // event triggered from parent
+        this.$root.$on('md-refresh' + this.id, () => {
+            this.refresh()
+        })
 
         // Custom autofocus: place the cursor at the end of current value
         if(this.autofocus) {
@@ -175,10 +187,13 @@ export default {
                 this.editor.scrollTo(scrollInfo.left, scrollInfo.top)
             }
             // force refresh
-            this.$nextTick(() => this.editor.refresh())
+            this.refresh()
         },
     },
     methods: {
+        refresh() {
+            this.$nextTick(() => this.editor.refresh())
+        },
         /**
          * Close any open dialog and bring focus back to the editor
          */
@@ -252,7 +267,8 @@ export default {
                 let page      = selected[0]
                 let selection = this.editor.getDoc().getSelection()
                 let text      = selection.length > 0 ? selection : page.text || page.title
-                let tag       = '(link: '+ page.id +' text: '+ text +')'
+                let lang      = this.currentLanguage && !this.currentLanguage.default ? ' lang: '+ this.currentLanguage.code : ''
+                let tag       = '(link: '+ page.id +' text: '+ text + lang +')'
 
                 this.insert(tag, 1)
                 this.currentDialog = null

@@ -54,6 +54,7 @@ You have access to the very same options as [the textarea field](https://getkirb
 | modals | Boolean | false | `true` | If set to `false`, link and email tags will be added without opening a modal |
 | blank | Boolean | false | `false` | If set to `true`, editors will be presented an option to add the `target: _blank` option to link tags |
 | invisibles | Boolean | false | `false` | If set to `true`, the *invisibles* button will be displayed in the toolbar, allowing you to show / hide hidden characters and whitespaces |
+| direction | Boolean | false | `false` | If set to `true`, the current translation direction will be checked on init. Improves compatibility with rtl languages |
 | query | Object | false | [see below](#34-query) | Sets a custom query for the page selector dialog |
 
 ### 3.2. Font settings
@@ -84,7 +85,7 @@ This field is packing the usual textarea buttons, and some more.
 ```yaml
 buttons:
   - headlines
-    - h1 
+    - h1
     - h2
     - h3
     - h4
@@ -102,6 +103,7 @@ buttons:
   - pagelink
   - image
   - file
+  - footnote
 ```
 
 If you don't need it, you can also hide the toolbar:
@@ -109,6 +111,33 @@ If you don't need it, you can also hide the toolbar:
 ```yaml
 buttons: false
 ```
+
+The full list of available buttons:
+
+```yaml
+buttons:
+  - headlines
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+  - bold
+  - italic
+  - ul
+  - ol
+  - link
+  - email
+  - blockquote
+  - horizontal-rule
+  - strikethrough
+  - pagelink
+  - image
+  - file
+  - footnote
+```
+
 
 ### 3.4. Query
 
@@ -144,6 +173,7 @@ return [
   'community.markdown-field.modals'     => true,
   'community.markdown-field.blank'      => false,
   'community.markdown-field.invisibles' => false,
+  'community.markdown-field.direction' => false,
 ];
 ```
 

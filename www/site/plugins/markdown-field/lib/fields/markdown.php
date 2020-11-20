@@ -1,6 +1,7 @@
 <?php
 
 use Kirby\Toolkit\A;
+use Kirby\Cms\PagePicker;
 
 $options = require kirby()->root('kirby') . '/config/fields/textarea.php';
 
@@ -15,7 +16,7 @@ $options = A::merge($options, [
          */
         'buttons' => function($buttons = null) {
         	if($buttons === false) return false;
-        	
+
             $buttons = $buttons ?? option('community.markdown-field.buttons');
         	if(empty($buttons)) return false;
 
@@ -65,6 +66,12 @@ $options = A::merge($options, [
         'invisibles' => function($invisibles = null) {
             return $invisibles ?? option('community.markdown-field.invisibles');
         },
+        /**
+         * Whether the current language direction should be checked on init. Boolean.
+         */
+        'direction' => function($direction = null) {
+            return $invisibles ?? option('community.markdown-field.direction');
+        },
         'query' => function($query = null) {
         	$queryOptions = option('community.markdown-field.query');
         	$queryOptions = $query ? A::merge($queryOptions, $query) : $queryOptions;
@@ -84,21 +91,6 @@ $options = A::merge($options, [
         }
     ],
     'methods' => [
-        'pageResponse' => function($page) {
-            $thumb = ['width'  => 100, 'height' => 100];
-            $image = $page->panelImage($this->image, $thumb);
-            $model = $this->model();
-
-            return [
-                'text'        => $page->toString('{{ page.title }}'),
-                'link'        => $page->panelUrl(true),
-                'id'          => $page->id(),
-                'info'        => false,
-                'image'       => $image,
-                'icon'        => $page->panelIcon($image),
-                'hasChildren' => $page->hasChildren(),
-            ];
-        },
         'fileResponse' => function($file) {
             $thumb = ['width'  => 100, 'height' => 100];
             $image = $file->panelImage($this->image, $thumb);
@@ -124,34 +116,17 @@ $options = A::merge($options, [
                 'pattern' => 'get-pages',
                 'action' => function () {
                     $field = $this->field();
-					$query = $field->query()['pagelink'];
+                    $model = $field->model();
+                    $query = $field->query()['pagelink'] ?? false;
 
-                    if ($query) {
-                        $pages = $field->model()->query($query, 'Kirby\Cms\Pages');
-                        $model = null;
-                    }
-                    else {
-                    	if (!$parent = $this->site()->find($this->requestQuery('parent'))) {
-	                        $parent = $this->site();
-	                    }
-
-	                    $pages = $parent->children();
-	                    $model = [
-	                        'id'    => $parent->id() == '' ? null : $parent->id(),
-	                        'title' => $parent->title()->value()
-	                    ];
-	                }
-
-                    $children = [];
-                    foreach ($pages as $index => $page) {
-                        if ($page->isReadable() === true) {
-                            $children[] = $field->pageResponse($page);
-                        }
-                    }
-                    return [
-                        'model' => $model,
-                        'pages' => $children
+                    $params = [
+                        'page'     => $this->requestQuery('page'),
+                        'parent'   => $this->requestQuery('parent'),
+                        'model'    => $model,
+                        'query'    => $query,
                     ];
+
+                    return (new PagePicker($params))->toArray();
                 }
             ],
             [
