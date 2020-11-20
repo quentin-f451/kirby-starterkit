@@ -10,10 +10,10 @@
     "url": "https://github.com/quentin-f451/kirby-starterkit/issues"
   },
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start": "npm run dev && npm run watch"
+    "server": "APP_ENV=dev php -S localhost:8282 -t www www/kirby/router.php",
+    "dev": "webpack --mode=development --watch",
+    "build": "rm -rf ./www/assets && webpack --mode=production",
+    "start": "concurrently \"npm:dev\" \"npm:server\""
   },
   "repository": {
     "type": "git",
@@ -23,34 +23,45 @@
     "jquery": "^3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-    "@babel/plugin-transform-arrow-functions": "^7.12.1",
-    "@babel/plugin-transform-block-scoping": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "autoprefixer": "^10.0.2",
-    "babel-loader": "^8.2.1",
-    "babel-minify-webpack-plugin": "^0.3.1",
-    "babel-plugin-lodash": "^3.3.4",
-    "browser-sync": "^2.26.13",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "clean-webpack-plugin": "^3.0.0",
-    "core-js": "^3.7.0",
-    "css-loader": "^5.0.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^6.2.0",
-    "hard-source-webpack-plugin": "^0.13.1",
-    "mini-css-extract-plugin": "^1.3.1",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.1.0",
+    "css-loader": "^3.5.2",
+    "cssnano": "^4.1.10",
+    "file-loader": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.9.0",
     "modernizr-webpack-plugin": "^1.0.7",
-    "node-sass": "^5.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "postcss-loader": "^4.1.0",
-    "postcss-pipeline-webpack-plugin": "^5.1.2",
-    "sass-loader": "^10.1.0",
-    "style-loader": "^2.0.0",
-    "svg-sprite-loader": "^5.0.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
+    "open-cli": "^6.0.1",
+    "postcss-loader": "^3.0.0",
+    "sanitize.css": "^11.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-livereload-plugin": "^2.3.0",
+    "webpack-merge": "^4.2.2",
+    "webpack-notifier": "^1.8.0"
+  },
+  "browserslist": [
+    ">0.25%",
+    "last 12 versions",
+    "Firefox ESR",
+    "not ie < 11"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "cssnano": {}
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
