@@ -6,8 +6,6 @@ Icon
 /composer.lock
 /node_modules
 /vendor
-/src/scss/_lib/_normalize.scss
-/src/scss/_partials
 /src/scss/.gitignore
 /src/scss/README.md
 /www/assets
