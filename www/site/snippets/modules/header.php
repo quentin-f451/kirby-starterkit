@@ -1,1 +1,2 @@
-<header></header>
+<header class="header">
+</header>

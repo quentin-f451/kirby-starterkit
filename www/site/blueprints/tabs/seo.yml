@@ -1,0 +1,12 @@
+label: Référencement
+icon: search
+sections:
+  seoA:
+    type: fields
+    fields:
+      descriptionSEO:
+        type: markdown
+        buttons: false
+        size: two-lines
+        label: Description pour référencement
+        maxlength: 300
