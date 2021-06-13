@@ -58,6 +58,5 @@
 
 <body>
 
-<main class="main">
-  <div class="content">
+  <main class="main">
     <?php snippet('modules/header') ?>

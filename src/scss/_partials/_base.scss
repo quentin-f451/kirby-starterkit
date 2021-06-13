@@ -1,0 +1,92 @@
+// INITIATE
+
+.transition {
+  @include transition;
+}
+
+// BORDER-BOX, RESET
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  -webkit-font-kerning: normal;
+  font-kerning: normal;
+
+  @if $font-smoothing-moz==true {
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @if $font-smoothing-webkit==true {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+body,
+html {
+  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// __________________________________________________________ //
+
+// TYPE SIZE
+
+html,
+body {
+  @extend .font-#{$main-font};
+  font-size: var(--fs);
+  line-height: var(--lh);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+html {
+  background: var(--color-bg);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+img {
+  width: 100%;
+}
+
+strong,
+b {
+  font-weight: normal;
+}
+
+i,
+em {
+  font-style: normal;
+}

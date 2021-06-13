@@ -1,0 +1,15 @@
+label: Images
+icon: image
+columns:
+  - width: 1/1
+    sections:
+      imagesA:
+        type: files
+        headline: Images
+        layout: cards
+        size: small
+        template: image
+        limit: 500
+        info: '{{ file.alt }}'
+        image:
+          back: white
