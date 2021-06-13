@@ -8,7 +8,10 @@ Icon
 /vendor
 /src/scss/.gitignore
 /src/scss/README.md
-/www/assets
+/www/assets/css/bundle.css
+/www/assets/fonts
+/www/assets/images
+/www/assets/js
 /www/kirby
 /www/media
 /www/site/cache
