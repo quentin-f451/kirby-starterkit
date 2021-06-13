@@ -37,6 +37,18 @@
   }
 
   // size option
+  &[data-size="one-line"] {
+    .cm-s-default,
+    .CodeMirror-scroll {
+      min-height: 0;
+    }
+  }
+  &[data-size="two-lines"] {
+    .cm-s-default,
+    .CodeMirror-scroll {
+      min-height: 3.5rem;
+    }
+  }
   &[data-size="small"] {
     .cm-s-default,
     .CodeMirror-scroll {

@@ -2,7 +2,7 @@
 
 Kirby::plugin('community/markdown-field', [
 	'options' => array(
-		'buttons'    => ['headlines', 'bold', 'italic', 'divider', 'link', 'email', 'code', 'divider', 'ul', 'ol'],
+		'buttons'    => ['headlines', 'bold', 'italic', 'divider', 'link', 'email', 'file', 'code', 'divider', 'ul', 'ol'],
 		'font'       => [
 			'family'  => 'monospace',
 			'size'    => 'regular',
@@ -17,6 +17,7 @@ Kirby::plugin('community/markdown-field', [
 		'blank'      => false,
 		'invisibles' => false,
         'direction'  => false,
+        'size'       => 'small',
 	),
     'fields' => array(
         'markdown' => require_once __DIR__ . '/lib/fields/markdown.php',
