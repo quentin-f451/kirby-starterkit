@@ -1,20 +1,23 @@
-const Website = {
-  init: () => {
-    var isTouch = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
-    var ua = window.navigator.userAgent;
-    var iOS = !!ua.match(/iP(ad|hone)/i);
-    var webkit = !!ua.match(/WebKit/i);
-    var isiOS = iOS && webkit && !ua.match(/CriOS/i);
+export default class Website {
+  constructor() {
+    this.addClasses();
+    this.blank();
+    this.resize();
+  }
 
-    var touch = isTouch ? "touch" : "no-touch";
-    var os = isiOS ? "ios" : "no-ios";
+  addClasses() {
+    const isTouch = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
+    const ua = window.navigator.userAgent;
+    const iOS = !!ua.match(/iP(ad|hone)/i);
+    const webkit = !!ua.match(/WebKit/i);
+    const isiOS = iOS && webkit && !ua.match(/CriOS/i);
+
+    const touch = isTouch ? "touch" : "no-touch";
+    const os = isiOS ? "ios" : "no-ios";
     $("html").addClass(touch).addClass(os);
+  }
 
-    Website.resize();
-    Website.blank();
-  },
-
-  blank: () => {
+  blank() {
     $("a").each((i, el) => {
       if ($(el).attr("target")) {
         return;
@@ -24,22 +27,14 @@ const Website = {
         $(el).attr("target", "_self");
       }
     });
-  },
+  }
 
-  resize: () => {
+  resize() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
     window.addEventListener("resize", () => {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
-  },
-
-  signature: () => {
-    console.log("Website coded by F451 (Domitille Debret and Quentin Creuzet)");
-    console.log("http://f451.faith");
-    console.log("hello@f451.faith");
-  },
-};
-
-export default Website;
+  }
+}

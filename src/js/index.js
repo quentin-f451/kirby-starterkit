@@ -8,7 +8,6 @@ import Website from "./_modules/website";
 import Home from "./_modules/home";
 
 $(function () {
-  Website.signature();
-  Website.init();
-  Home.init();
+  new Website();
+  new Home();
 });

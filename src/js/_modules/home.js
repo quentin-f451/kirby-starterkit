@@ -1,7 +1,9 @@
-const Home = {
-  init: () => {
-    console.log('Loaded');
+export default class Home {
+  constructor() {
+    this.init();
   }
-};
 
-export default Home;
+  init() {
+    console.log("Loaded");
+  }
+}
