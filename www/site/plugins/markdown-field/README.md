@@ -8,6 +8,8 @@ Enhanced markdown editor for Kirby 3, community built.
 
 ## Overview
 
+> This plugin is completely free and published under the MIT license. However, if you are using it in a commercial project and want to help me keep up with maintenance, please consider [making a donation of your choice](https://paypal.me/sylvainjl) or purchasing your license(s) through [my affiliate link](https://a.paddle.com/v2/click/1129/36369?link=1170).
+
 - [1. Installation](#1-installation)
 - [2. Setup](#2-setup)
 - [3. Options](#3-options)
@@ -15,10 +17,12 @@ Enhanced markdown editor for Kirby 3, community built.
   - [3.2. Font-settings](#32-font-settings)
   - [3.3. Buttons](#33-buttons)
   - [3.4. Query](#34-query)
-  - [3.5. Default options](#34-default-options)
-- [4. Development](#4-development)
-- [5. License](#5-license)
-- [6. Credits](#6-credits)
+  - [3.5. Size](#35-size)
+  - [3.6. Default options](#36-default-options)
+- [4. Custom buttons](#4-custom-buttons)
+- [5. Development](#5-development)
+- [6. License](#6-license)
+- [7. Credits](#7-credits)
 
 <br/>
 
@@ -52,10 +56,11 @@ You have access to the very same options as [the textarea field](https://getkirb
 |:-------|:-----|:---------|:--------|:------------|
 | font | Object | false | [see below](#32-font-settings) | Sets the font options of the Markdown field. [See below](#32-font-settings) the available options |
 | modals | Boolean | false | `true` | If set to `false`, link and email tags will be added without opening a modal |
-| blank | Boolean | false | `false` | If set to `true`, editors will be presented an option to add the `target: _blank` option to link tags |
+| blank | Boolean / String | false | `false` | If set to `true`, editors will be presented an option to add the `target: _blank` option to link tags. If set to `always`, the option will be activated by default |
 | invisibles | Boolean | false | `false` | If set to `true`, the *invisibles* button will be displayed in the toolbar, allowing you to show / hide hidden characters and whitespaces |
 | direction | Boolean | false | `false` | If set to `true`, the current translation direction will be checked on init. Improves compatibility with rtl languages |
 | query | Object | false | [see below](#34-query) | Sets a custom query for the page selector dialog |
+| size | String | false | `small` | Sets the empty height of the Markdown field |
 
 ### 3.2. Font settings
 
@@ -101,8 +106,6 @@ buttons:
   - horizontal-rule
   - strikethrough
   - pagelink
-  - image
-  - file
   - footnote
 ```
 
@@ -133,7 +136,6 @@ buttons:
   - horizontal-rule
   - strikethrough
   - pagelink
-  - image
   - file
   - footnote
 ```
@@ -141,25 +143,53 @@ buttons:
 
 ### 3.4. Query
 
-You can limit the options shown in the dialogs, by setting:
-- a `pagelink` query (if unset, you'll be able to browse the entire site tree)
-- a `images` query (if unset, you'll pick images from the current page)
-- a `files` query (if unset, you'll pick files from the current page)
+You can limit the options shown in the Pagelink dialog, by setting a `pagelink` query (if unset, you'll be able to browse the entire website tree)
 
 ```yaml
 query:
   pagelink: kirby.page('my-page').children
-  images: kirby.page('my-page').images
-  files: kirby.page('my-page').filterBy("type", "!=", "image")
 ```
 
-### 3.5. Default options
+### 3.5. Size
+
+You can define the height of the field when empty. Default is `two-lines`, which mimics the textarea's default empty height.
+
+If you want the field to mimic a text field but with some markdown highlighting on top of it, set the size to `one-line` and `buttons: false`.
+
+All predefined sizes are:
+
+```yaml
+- one-line
+- two-lines
+- small (same as textarea)
+- medium (same as textarea)
+- large (same as textarea)
+- huge (same as textarea)
+```
+
+Note that you can make the default height any height you want with some [custom panel CSS](https://getkirby.com/docs/reference/system/options/panel#custom-panel-css). First, set the `size` option to any string you'd like:
+
+```yaml
+size: custom-size
+```
+
+Then in your `panel.css`:
+
+```css
+.k-markdown-input-wrapper[data-size="custom-size"] .cm-s-default,
+.k-markdown-input-wrapper[data-size="custom-size"] .CodeMirror-scroll {
+    min-height: 15rem;
+}
+```
+
+### 3.6. Default options
 
 You can globally override the default options, instead of setting them on a per-field basis. In your `site/config/config.php`:
 
 ```php
 return [
-  'community.markdown-field.buttons'    => ['headlines', 'bold', 'italic', 'divider', 'link', 'email', 'code', 'divider', 'ul', 'ol'],
+  'community.markdown-field.size'       => 'small',
+  'community.markdown-field.buttons'    => ['headlines', 'bold', 'italic', 'divider', 'link', 'email', 'file', 'code', 'divider', 'ul', 'ol'],
   'community.markdown-field.font'       => [
     'family'  => 'monospace',
     'scaling' => false,
@@ -167,8 +197,6 @@ return [
   ],
   'community.markdown-field.query'      => [
     'pagelink' => null,
-    'images'   => 'page.images',
-    'files'    => 'page.files.filterBy("type", "!=", "image")',
   ],
   'community.markdown-field.modals'     => true,
   'community.markdown-field.blank'      => false,
@@ -179,7 +207,13 @@ return [
 
 <br/>
 
-## 4. Development
+## 4. Custom buttons
+
+Since 1.0.8 you can register your own buttons. This functionnality has [a dedicated guide](custom-buttons).
+
+<br/>
+
+## 5. Development
 
 - Clone the repo
 - `cd` to your newly created folder (named `kirby-markdown-field`, or whatever you have chosen)
@@ -198,13 +232,13 @@ npm run build
 
 <br/>
 
-## 5. License
+## 6. License
 
 MIT
 
 <br/>
 
-## 6. Credits
+## 7. Credits
 
 **Text editor:**
 
@@ -212,9 +246,7 @@ MIT
 
 **Contributors:**
 
-- [Fabian Michael](https://github.com/fabianmichael)
-- [Sylvain Julé](https://github.com/sylvainjule)
-- [Thomas Günther](https://github.com/medienbaecker)
+@fabianmichael, @sylvainjule, @medienbaecker, @mtsknn, @nsteiner, @rasteiner, @thomasfahrland, @johannschopplich
 
 **Inspirations / K2 fields:**
 
