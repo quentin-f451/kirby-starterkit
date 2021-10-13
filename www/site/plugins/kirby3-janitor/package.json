@@ -1,0 +1,14 @@
+{
+  "name": "kirby-field-janitor",
+  "version": "2.11.0",
+  "description": "Kirby 3 Plugin Janitor",
+  "author": "Bruno Meilick <b@bnomei.com>",
+  "scripts": {
+    "dev": "kirbyup src/index.js --watch",
+    "build": "kirbyup src/index.js"
+  },
+  "devDependencies": {
+    "kirbyup": "^0.11.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

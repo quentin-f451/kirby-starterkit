@@ -23,7 +23,9 @@
     "rasteiner/k3-pagesdisplay-section": "^0.0.6",
     "bnomei/kirby3-robots-txt": "^1.4",
     "omz13/kirby3-xmlsitemap": "^1.2",
-    "jg/kirby-fields-block": "^1.1"
+    "jg/kirby-fields-block": "^1.1",
+    "sylvainjule/backups": "^1.0",
+    "bnomei/kirby3-janitor": "^2.11"
   },
   "config": {
     "optimize-autoloader": true
