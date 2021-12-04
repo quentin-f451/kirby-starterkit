@@ -3,6 +3,11 @@ export default class Website {
     this.addClasses();
     this.blank();
     this.resize();
+
+    $(window).on("resize", () => {
+      this.addClasses();
+      this.resize();
+    });
   }
 
   addClasses() {
@@ -11,10 +16,9 @@ export default class Website {
     const iOS = !!ua.match(/iP(ad|hone)/i);
     const webkit = !!ua.match(/WebKit/i);
     const isiOS = iOS && webkit && !ua.match(/CriOS/i);
-
     const touch = isTouch ? "touch" : "no-touch";
     const os = isiOS ? "ios" : "no-ios";
-    $("html").addClass(touch).addClass(os);
+    $("html").removeClass("touch no-touch ios no-ios").addClass(touch).addClass(os);
   }
 
   blank() {
@@ -31,10 +35,6 @@ export default class Website {
 
   resize() {
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-    window.addEventListener("resize", () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    });
+    $("html").css("--vh", `${vh}px`);
   }
 }
