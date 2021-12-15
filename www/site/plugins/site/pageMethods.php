@@ -3,8 +3,8 @@
 return [
 
   'createDescription' => function () {
-      $description = "";
-      return $description;
+    if ($this->descriptionSEO()->isNotEmpty()) return $this->descriptionSEO()->smartypants();
+    return $this->site()->descriptionSEO()->smartypants();
   },
 
   'createTitle' => function () {
