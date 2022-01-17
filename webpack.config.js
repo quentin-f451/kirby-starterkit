@@ -10,6 +10,7 @@ const commonConfig = {
     path: path.resolve(__dirname, "./www/assets/"),
     publicPath: "/",
     filename: "./js/bundle.js",
+    assetModuleFilename: "./",
   },
   module: {
     rules: [
@@ -44,21 +45,17 @@ const commonConfig = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: "url-loader",
-        options: {
-          name: "[name].[hash].[ext]",
-          outputPath: "/images/",
-          publicPath: "../images/",
+        test: /\.(png|jpg|gif|svg)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "./assets/images/[name][ext]",
         },
       },
       {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          outputPath: "/fonts/",
-          publicPath: "../fonts/",
+        test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+        type: "asset/resource",
+        generator: {
+          filename: "./assets/fonts/[name][ext]",
         },
       },
     ],
