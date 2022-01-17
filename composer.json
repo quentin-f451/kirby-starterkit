@@ -17,15 +17,14 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "getkirby/cms": "^3.4",
-    "k-community/markdown-field": "^1.0",
-    "sylvainjule/previews": "^1.0",
-    "rasteiner/k3-pagesdisplay-section": "^0.0.6",
-    "bnomei/kirby3-robots-txt": "^1.4",
-    "omz13/kirby3-xmlsitemap": "^1.2",
+    "getkirby/cms": "^3.5",
+    "k-community/markdown-field": "^1.0.9",
+    "sylvainjule/previews": "^1.0.5",
+    "bnomei/kirby3-robots-txt": "^1.5",
+    "omz13/kirby3-xmlsitemap": "^1.2.1",
     "jg/kirby-fields-block": "^1.1",
-    "sylvainjule/backups": "^1.0",
-    "bnomei/kirby3-janitor": "^2.11"
+    "sylvainjule/backups": "^1.0.2",
+    "bnomei/kirby3-janitor": "^2.13"
   },
   "config": {
     "optimize-autoloader": true

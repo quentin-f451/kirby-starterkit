@@ -1,13 +1,8 @@
-import "./_lib/modernizr";
 import "../scss/application.scss";
-import jquery from "jquery";
+import { onLoading } from "./_modules/website";
+import { loadPage } from "./_modules/home";
 
-window.$ = window.jQuery = jquery;
-
-import Website from "./_modules/website";
-import Home from "./_modules/home";
-
-$(function () {
-  new Website();
-  new Home();
+document.addEventListener("DOMContentLoaded", () => {
+  onLoading();
+  loadPage();
 });

@@ -1,4 +1,4 @@
-label: Référencement
+label: SEO
 icon: search
 sections:
   seoA:
@@ -8,5 +8,5 @@ sections:
         type: markdown
         buttons: false
         size: two-lines
-        label: Description pour référencement
+        label: SEO Description
         maxlength: 300

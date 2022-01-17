@@ -57,6 +57,4 @@
 </head>
 
 <body>
-
   <main class="main">
-    <?php snippet('modules/header') ?>

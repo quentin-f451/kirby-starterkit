@@ -1,5 +1,5 @@
 <?php snippet('head') ?>
 
-Hello world!
+<div>Hello world!</div>
 
 <?php snippet('foot') ?>
