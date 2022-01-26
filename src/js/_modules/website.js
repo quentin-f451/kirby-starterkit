@@ -1,10 +1,10 @@
-export function onLoading() {
+export const onLoading = () => {
   addClassesToHTML();
   addTargetBlank();
   addVHValue();
-}
+};
 
-function addClassesToHTML() {
+const addClassesToHTML = () => {
   const isTouch = "ontouchstart" in window || navigator.msMaxTouchPoints > 0;
   const ua = window.navigator.userAgent;
   const iOS = !!ua.match(/iP(ad|hone)/i);
@@ -14,9 +14,9 @@ function addClassesToHTML() {
   const os = isiOS ? "ios" : "no-ios";
   document.documentElement.classList.remove("touch", "no-touch", "ios", "no-ios");
   document.documentElement.classList.add(touch, os);
-}
+};
 
-function addTargetBlank() {
+const addTargetBlank = () => {
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
     if (link.target) {
@@ -28,9 +28,9 @@ function addTargetBlank() {
       link.target = "_self";
     }
   });
-}
+};
 
-function addVHValue() {
+const addVHValue = () => {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 
@@ -38,4 +38,4 @@ function addVHValue() {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
-}
+};
