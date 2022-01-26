@@ -29,7 +29,7 @@ const commonConfig = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: "." }
+            options: { publicPath: "." },
           },
           {
             loader: "css-loader",
@@ -49,14 +49,14 @@ const commonConfig = {
         test: /\.(png|jpg|gif|svg)$/,
         type: "asset/resource",
         generator: {
-          filename: "./assets/images/[name][ext]",
+          filename: "./images/[name][ext]",
         },
       },
       {
         test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
         type: "asset/resource",
         generator: {
-          filename: "./assets/fonts/[name][ext]",
+          filename: "./fonts/[name][ext]",
         },
       },
     ],
