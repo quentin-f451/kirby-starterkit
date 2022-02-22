@@ -52,7 +52,7 @@
   <meta name="twitter:description" content="<?= $page->createDescription() ?>">
   <meta name="twitter:image" content="<?= $page->createImage() ?>">
 
-  <?= css('assets/css/bundle.css') ?>
+  <?= Bnomei\Fingerprint::css('assets/css/bundle.css') ?>
 
 </head>
 

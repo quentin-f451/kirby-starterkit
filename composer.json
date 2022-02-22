@@ -24,7 +24,8 @@
     "omz13/kirby3-xmlsitemap": "^1.2.1",
     "jg/kirby-fields-block": "^1.1",
     "sylvainjule/backups": "^1.0.2",
-    "bnomei/kirby3-janitor": "^2.13"
+    "bnomei/kirby3-janitor": "^2.13",
+    "bnomei/kirby3-fingerprint": "^3.1"
   },
   "config": {
     "optimize-autoloader": true
