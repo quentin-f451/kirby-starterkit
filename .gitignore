@@ -18,3 +18,7 @@ Icon
 /www/site/accounts
 /www/site/sessions
 /www/site/config/.license
+/www/site/plugins/kirby*
+/www/site/plugins/backups
+/www/site/plugins/previews
+/www/site/plugins/markdown-field

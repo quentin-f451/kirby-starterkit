@@ -16,16 +16,16 @@
     }
   ],
   "require": {
-    "php": ">=7.1.0",
-    "getkirby/cms": "^3.5",
+    "php": ">=8.1",
+    "getkirby/cms": "^3.6",
     "k-community/markdown-field": "^1.0.9",
-    "sylvainjule/previews": "^1.0.5",
+    "sylvainjule/previews": "^1.0.6",
     "bnomei/kirby3-robots-txt": "^1.5",
     "omz13/kirby3-xmlsitemap": "^1.2.1",
     "jg/kirby-fields-block": "^1.1",
     "sylvainjule/backups": "^1.0.2",
-    "bnomei/kirby3-janitor": "^2.13",
-    "bnomei/kirby3-fingerprint": "^3.1"
+    "bnomei/kirby3-janitor": "^2.16.1",
+    "bnomei/kirby3-fingerprint": "^3.1.2"
   },
   "config": {
     "optimize-autoloader": true
