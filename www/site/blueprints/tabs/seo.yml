@@ -5,8 +5,6 @@ sections:
     type: fields
     fields:
       descriptionSEO:
-        type: markdown
-        buttons: false
-        size: two-lines
+        extends: fields/text
         label: SEO Description
         maxlength: 300
