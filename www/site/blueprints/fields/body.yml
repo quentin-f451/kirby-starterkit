@@ -1,0 +1,7 @@
+type: markdown
+size: two-lines
+label: Texte
+font: sans-serif
+buttons: 
+  - italic
+  - link

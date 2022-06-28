@@ -1,15 +1,7 @@
 <?php
 
 return [
-  'community.markdown-field.buttons' => ['italic', 'link', 'email'],
-  'community.markdown-field.font' => [
-    'family' => 'sans-serif',
-    'scaling' => false,
-    'size' => 'regular',
-  ],
-
   'panel' => ['css' => 'assets/css/panel.css'],
-
   'debug' => true,
 
   // 'cache' => [
