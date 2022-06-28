@@ -17,8 +17,8 @@
   ],
   "require": {
     "php": ">=8.1",
-    "getkirby/cms": "^3.6",
-    "k-community/markdown-field": "^1.0.9",
+    "getkirby/cms": "^3.7",
+    "k-community/markdown-field": "^2.0",
     "sylvainjule/previews": "^1.0.6",
     "bnomei/kirby3-robots-txt": "^1.5",
     "omz13/kirby3-xmlsitemap": "^1.2.1",
