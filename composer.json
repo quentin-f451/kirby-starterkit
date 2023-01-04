@@ -19,7 +19,7 @@
     "php": ">=8.0",
     "getkirby/cms": "^3.8",
     "k-community/markdown-field": "^2.1.1",
-    "bnomei/kirby3-robots-txt": "^1.5.1",
+    "bnomei/kirby3-robots-txt": "^1.5",
     "omz13/kirby3-xmlsitemap": "^1.2.1",
     "jg/kirby-fields-block": "^1.1",
     "sylvainjule/backups": "^1.0.2",
