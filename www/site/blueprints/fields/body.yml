@@ -1,7 +1,8 @@
-type: markdown
-size: two-lines
-label: Texte
-font: sans-serif
-buttons: 
+label: Text
+type: writer
+marks:
   - italic
   - link
+nodes: false
+toolbar: 
+  inline: false

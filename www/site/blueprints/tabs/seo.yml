@@ -1,10 +1,32 @@
 label: SEO
 icon: search
-sections:
-  seoA:
-    type: fields
-    fields:
-      descriptionSEO:
-        extends: fields/text
-        label: SEO Description
-        maxlength: 300
+columns: 
+  left:
+    width: 1/4
+    sections:
+      seoA:
+        type: fields
+        fields:
+          imageSEO:
+            type: files
+            layout: cards
+            label: Image OpenGraph
+            query: page.images
+            help: Image used for OpenGraph. Recommended size is 1200x630px. Only one image is allowed.
+            max: 1
+            image:
+              cover: true
+              ratio: 1200/630
+            uploads:
+              template: seo
+  right:
+    width: 3/4
+    sections:
+      seoB:
+        type: fields
+        fields:
+          descriptionSEO:
+            extends: fields/inline
+            label: Description
+            help: A short description of the page. It will be used in the meta description tag.
+            maxlength: 400

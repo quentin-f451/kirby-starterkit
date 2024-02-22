@@ -20,7 +20,7 @@ cd path/to/my/folder
 git clone https://github.com/quentin-f451/kirby-starterkit NAME-OF-MY-FOLDER
 cd NAME-OF-MY-FOLDER
 git clone --depth=1 https://github.com/quentin-f451/scss-starterkit.git src/scss
-rm -rf ./src/scss/.git
+rm -rf ./src/scss/.git ./src/scss/.gitignore ./src/scss/README.md
 ```
 
 3. Install and update Kirby
@@ -33,10 +33,10 @@ cd ../..
 
 4. Install dependencies with npm
 ```
-npm install
+pnpm install
 ```
 
-5. You just have to type `npm run start` now, open `http://localhost:3000` and to start coding. The browser will reload at every saved change!
+5. You just have to type `npm run dev` now, open `http://localhost:3000` and to start coding. The browser will reload at every saved change!
 
 6. At the end of your coding process, you can run the `npm run build` command.
 
@@ -45,12 +45,12 @@ npm install
 git clone https://github.com/quentin-f451/kirby-starterkit 10-KIRBY
 cd 10-KIRBY
 git clone --depth=1 https://github.com/quentin-f451/scss-starterkit.git src/scss
-rm -rf ./src/scss/.git
+rm -rf ./src/scss/.git ./src/scss/.gitignore ./src/scss/README.md
 composer install
 cd www/kirby
 composer update
 cd ../..
-npm install
+pnpm install
 ```
 
 ## Folder structure

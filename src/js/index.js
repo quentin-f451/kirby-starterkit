@@ -1,8 +1,6 @@
-import "../scss/application.scss";
 import { onLoading } from "./_modules/website";
-import { loadPage } from "./_modules/home";
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Hello from F451 🚀");
   onLoading();
-  loadPage();
 });
