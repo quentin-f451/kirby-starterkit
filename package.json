@@ -1,56 +1,21 @@
 {
   "name": "kirby-starterkit",
-  "version": "3.0.10",
-  "description": "Starterkit for Kirby 3",
-  "author": "quentin-f451",
-  "license": "MIT",
-  "private": false,
-  "homepage": "https://github.com/quentin-f451/kirby-starterkit#readme",
-  "bugs": {
-    "url": "https://github.com/quentin-f451/kirby-starterkit/issues"
-  },
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
+    "vite": "vite",
+    "dev": "npm run build && concurrently \"npm:server\" \"npm:vite\" -c yellow,green",
     "server": "APP_ENV=dev php -S localhost:3000 -t www www/kirby/router.php",
-    "dev": "webpack --mode=development --watch",
-    "build": "rm -rf ./www/assets && webpack --mode=production",
-    "start": "concurrently \"npm:dev\" \"npm:server\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/quentin-f451/kirby-starterkit.git"
+    "build": "vite build",
+    "preview": "npm run build && npm run server"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "babel-loader": "^8.1.0",
-    "concurrently": "^7.0.0",
-    "css-loader": "^6.5.1",
-    "mini-css-extract-plugin": "^2.5.1",
-    "postcss-loader": "^6.2.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "webpack": "^5.0.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-livereload-plugin": "^3.0.2",
-    "webpack-merge": "^4.2.2"
+    "concurrently": "^8.2.2",
+    "sass": "^1.71.1",
+    "vite": "^5.1.4"
   },
-  "browserslist": [
-    "edge >= 16",
-    "firefox >= 52",
-    "chrome >= 57",
-    "safari >= 10.1",
-    "opera >= 44",
-    "ios >= 10.3",
-    "android >= 67",
-    "and_chr >= 74",
-    "and_uc >= 11.8",
-    "op_mob >= 46",
-    "and_ff >= 67",
-    "samsung >= 6.2"
-  ],
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+  "dependencies": {
+    "vite-plugin-kirby": "^5.3.0"
   }
 }

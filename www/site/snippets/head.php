@@ -52,8 +52,7 @@
   <meta name="twitter:description" content="<?= $page->createDescription() ?>">
   <meta name="twitter:image" content="<?= $page->createImage() ?>">
 
-  <?= css('assets/css/bundle.css') ?>
-
+  <?= LoadAssets::getCSS('scss/application.scss') ?>
 </head>
 
 <body>
