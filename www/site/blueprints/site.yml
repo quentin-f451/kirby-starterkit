@@ -1,4 +1,20 @@
 title: Website
 
-tabs:
-  seo: tabs/seo
+tabs: 
+  content: 
+    label: Content
+    icon: folder
+    sections: 
+      contentA:
+        type: pages
+        headline: Pages
+        image: false
+  seo: 
+    extends: tabs/seo
+    columns: 
+      left:
+        sections:
+          seoA:
+            fields:
+              imageSEO:
+                query: site.images

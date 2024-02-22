@@ -1,2 +1,11 @@
 title: Image
 accept: image/jpeg, image/png, image/gif
+
+create:
+  width: 2560
+
+fields:
+  alt:
+    label: Alternative Text
+    type: text
+    help: A short description of the image. It will be used in the alt attribute of the image tag.
