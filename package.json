@@ -1,6 +1,6 @@
 {
   "name": "kirby-starterkit",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Starterkit for Kirby 4",
   "author": "quentin-f451",
   "license": "MIT",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "vite": "vite",
-    "dev": "npm run build && concurrently \"npm:server\" \"npm:vite\" -c yellow,green",
+    "dev": "npm run build && APP_ENV=dev concurrently \"npm:server\" \"npm:vite\" -c yellow,green",
     "server": "php -S localhost:3000 -t www www/kirby/router.php",
     "build": "vite build",
     "preview": "npm run build && npm run server"
