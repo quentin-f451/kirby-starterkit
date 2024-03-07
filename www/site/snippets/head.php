@@ -5,15 +5,12 @@
 <!--[if IE 8]><html class="no-js lt-ie9" lang="fr"> <![endif]-->
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html class="no-js" lang="fr" dir="ltr">
+<html class="no-js" lang="<?= site()->lang() ?>" dir="ltr">
 <!--<![endif]-->
 
 <head>
   <meta charset="utf-8">
-  <title><?= $page->createTitle() ?></title>
-
-  <meta name="author" content="">
-  <meta name="description" content="<?= $page->createDescription() ?>">
+  <?php snippet('seo/head') ?>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -38,19 +35,6 @@
   <meta name="msapplication-square150x150logo" content="<?php snippet('modules/favicon', ['size' => 150]); ?>" />
   <meta name="msapplication-wide310x150logo" content="<?php snippet('modules/favicon', ['size' => 310]); ?>" />
   <meta name="msapplication-square310x310logo" content="<?php snippet('modules/favicon', ['size' => 310]); ?>" />
-
-  <meta property="og:url" content="<?= $page->url() ?>">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="<?= $page->createTitle() ?>">
-  <meta property="og:description" content="<?= $page->createDescription() ?>">
-  <meta property="og:image" content="<?= $page->createImage() ?>">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="" />
-  <meta name="twitter:text:title" content="<?= $page->createTitle() ?>">
-  <meta name="twitter:title" content="<?= $page->createTitle() ?>">
-  <meta name="twitter:description" content="<?= $page->createDescription() ?>">
-  <meta name="twitter:image" content="<?= $page->createImage() ?>">
 
   <?= LoadAssets::getCSS('scss/application.scss') ?>
 </head>

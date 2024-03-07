@@ -9,12 +9,4 @@ tabs:
         type: pages
         headline: Pages
         image: false
-  seo: 
-    extends: tabs/seo
-    columns: 
-      left:
-        sections:
-          seoA:
-            fields:
-              imageSEO:
-                query: site.images
+  seo: seo/site
