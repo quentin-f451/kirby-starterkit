@@ -21,4 +21,5 @@ Icon
 /www/content/**/*.jpeg
 /www/content/**/*.png
 /www/content/**/*.zip
+/www/site/plugins/**/vendor
 pnpm-lock.yaml
