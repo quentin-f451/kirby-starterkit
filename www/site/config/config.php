@@ -18,11 +18,7 @@ return [
   ],
 
   'thumbs' => [
-    'presets' => [
-      'slideshow' => ['height' => 1340, 'quality' => 90],
-      'grid-sm' => ['width' => 860, 'quality' => 90],
-      'grid-md' => ['width' => 1280, 'quality' => 90],
-    ],
+    'presets' => [],
     'srcsets' => [
       'webp' => [
         '50w' => ['width' => 50, 'quality' => 90, 'format' => 'webp'],
@@ -60,5 +56,4 @@ return [
   ],
 
   'routes' => [],
-  'thumbs' => [],
 ];

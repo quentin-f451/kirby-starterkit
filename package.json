@@ -1,29 +1,29 @@
 {
-  "name": "kirby-starterkit",
-  "version": "4.0.3",
-  "description": "Starterkit for Kirby 4",
-  "author": "quentin-f451",
-  "license": "MIT",
-  "private": false,
-  "type": "module",
-  "homepage": "https://github.com/quentin-f451/kirby-starterkit#readme",
-  "bugs": {
-    "url": "https://github.com/quentin-f451/kirby-starterkit/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/quentin-f451/kirby-starterkit.git"
-  },
-  "scripts": {
-    "vite": "vite",
-    "dev": "npm run build && concurrently \"npm:server\" \"npm:vite\" -c yellow,green",
-    "server": "APP_ENV=dev php -S localhost:3000 -t www www/kirby/router.php",
-    "build": "vite build",
-    "preview": "npm run build && npm run server"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2",
-    "sass": "^1.71.1",
-    "vite": "^5.1.4"
-  }
+	"name": "kirby-starterkit",
+	"version": "4.1.0",
+	"description": "Starterkit for Kirby 4",
+	"author": "quentin-f451",
+	"license": "MIT",
+	"private": false,
+	"type": "module",
+	"homepage": "https://github.com/quentin-f451/kirby-starterkit#readme",
+	"bugs": {
+		"url": "https://github.com/quentin-f451/kirby-starterkit/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/quentin-f451/kirby-starterkit.git"
+	},
+	"scripts": {
+		"vite": "vite",
+		"dev": "npm run build && concurrently \"npm:server\" \"npm:vite\" -c yellow,green",
+		"server": "APP_ENV=dev php -S localhost:3000 -t www www/kirby/router.php",
+		"build": "vite build",
+		"preview": "npm run build && npm run server"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.0",
+		"sass": "^1.83.0",
+		"vite": "^6.0.5"
+	}
 }

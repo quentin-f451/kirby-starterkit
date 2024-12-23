@@ -17,8 +17,8 @@
   ],
   "require": {
     "php": ">=8.2",
-    "getkirby/cms": "^4.1",
-    "tobimori/kirby-seo": "^1.0.0-rc.4"
+    "getkirby/cms": "^4.5",
+    "tobimori/kirby-seo": "^1.1"
   },
   "config": {
     "optimize-autoloader": true,
