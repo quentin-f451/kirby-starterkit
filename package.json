@@ -1,7 +1,7 @@
 {
 	"name": "kirby-starterkit",
 	"version": "4.1.0",
-	"description": "Starterkit for Kirby 4",
+	"description": "Starterkit for Kirby 5",
 	"author": "quentin-f451",
 	"license": "MIT",
 	"private": false,
@@ -22,8 +22,8 @@
 		"preview": "npm run build && npm run server"
 	},
 	"devDependencies": {
-		"concurrently": "^9.2.1",
-		"sass": "^1.97.2",
-		"vite": "^7.3.1"
+		"concurrently": "^10.0.7",
+		"sass": "^1.108.2",
+		"vite": "^8.4.0"
 	}
 }
